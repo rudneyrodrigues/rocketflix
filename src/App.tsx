@@ -40,7 +40,7 @@ export function App() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center gap-8 bg-gradient-to-bl from-red-700 via-gray-900 to-blue-700 h-screen px-4">
+    <main className="flex flex-col items-center justify-center gap-8 bg-gradient-to-bl from-red-700 via-gray-900 to-blue-700 md:h-screen p-4">
       <div className='flex flex-col items-center gap-3'>
         <img
           src={shuffleImg}
@@ -51,20 +51,20 @@ export function App() {
       </div>
 
       {film.id ? (
-        <div className='flex items-center justify-center gap-8 w-full max-w-2xl h-80 max-h-80'>
+        <div className='flex flex-col items-center relative justify-center gap-8 w-full max-w-2xl md:h-80 md:max-h-80 md:flex-row'>
           <img
             src={film.poster}
             alt={film.title}
             className='h-full rounded-md'
           />
-          <div className='flex flex-col gap-4 h-full'>
+          <div className='flex flex-col gap-4 md:h-full absolute bottom-0 bg-gradient-to-bl from-red-700 via-gray-900 to-blue-700 opacity-95 md:bg-inherit md:from-inherit md:via-inherit md:to-inherit px-4 pb-4 md:relative rounded-b-md'>
             <h1 className='font-sans font-bold text-gray-100 text-xl'>{film.title}</h1>
-            <p className='font-sans text-base text-gray-100'>{film.description}</p>
+            <p className='font-sans text-base text-gray-100 '>{film.description}</p>
           </div>
         </div>
       ) : (
-        <div className='flex items-center justify-center gap-8 w-full max-w-2xl h-80'>
-          <div className='bg-opacity-5 bg-gray-200 rounded-md h-80 w-5/12' />
+        <div className='flex flex-col items-center justify-center gap-8 w-full max-w-2xl h-80 md:flex-row'>
+          <div className='bg-opacity-5 bg-gray-200 rounded-md h-80 w-full md:w-5/12' />
           <div className='bg-opacity-5 bg-gray-200 rounded-md h-full w-full' />
         </div>
       )}
